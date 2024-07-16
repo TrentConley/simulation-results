@@ -30,18 +30,28 @@ export default function Home() {
         </div>
         <div className="w-full h-[9000px]">
           {activeTab === "plot1" && (
-            <iframe
-              src="/sim_plots.html"
-              className="w-full h-full border-0"
-              title="Simulation Plot 1"
-            ></iframe>
+            <>
+              <h2 className="text-center text-xl mb-4">
+                Using product for only Lift and Drag
+              </h2>
+              <iframe
+                src="/sim_plots.html"
+                className="w-full h-full border-0"
+                title="Simulation Plot 1"
+              ></iframe>
+            </>
           )}
           {activeTab === "plot2" && (
-            <iframe
-              src="/sim_plots2.html"
-              className="w-full h-full border-0"
-              title="Simulation Plot 2"
-            ></iframe>
+            <>
+              <h2 className="text-center text-xl mb-4">
+                Using product for all
+              </h2>
+              <iframe
+                src="/sim_plots2.html"
+                className="w-full h-full border-0"
+                title="Simulation Plot 2"
+              ></iframe>
+            </>
           )}
           {/* Add more iframes for additional plots as needed */}
         </div>
