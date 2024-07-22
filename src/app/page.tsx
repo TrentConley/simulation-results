@@ -34,16 +34,24 @@ export default function Home() {
           >
             Plot 3
           </button>
+          <button
+            className={`px-4 py-2 ml-2 ${
+              activeTab === "plot4" ? "bg-blue-500 text-white" : "bg-gray-200"
+            }`}
+            onClick={() => setActiveTab("plot4")}
+          >
+            Plot 4
+          </button>
           {/* Add more buttons for additional plots as needed */}
         </div>
         <div className="w-full h-[9000px]">
           {activeTab === "plot1" && (
             <>
               <h2 className="text-center text-xl mb-4">
-                100m/s start, elevon controlled
+                Current center of gravity, no dampening
               </h2>
               <iframe
-                src="/low_speed_baseline.html"
+                src="/CURRENT_CENTER_GRAVITY_NO_DAMPENING.html"
                 className="w-full h-full border-0"
                 title="Simulation Plot 1"
               ></iframe>
@@ -52,10 +60,10 @@ export default function Home() {
           {activeTab === "plot2" && (
             <>
               <h2 className="text-center text-xl mb-4">
-                100m/s start, elevon uncontrolled
+                With center of gravity at 2.00, no dampening
               </h2>
               <iframe
-                src="/low_speed_no_elevon_cmd.html"
+                src="/2_CENTER_GRAVITY_NO_DAMPENING.html"
                 className="w-full h-full border-0"
                 title="Simulation Plot 2"
               ></iframe>
@@ -64,10 +72,22 @@ export default function Home() {
           {activeTab === "plot3" && (
             <>
               <h2 className="text-center text-xl mb-4">
-                100m/s start, elevon controlled, dt 10x smaller
+                Current center of gravity, with dampening
               </h2>
               <iframe
-                src="/low_speed_small_dt.html"
+                src="/CURRENT_CENTER_GRAVITY_YES_DAMPENING.html"
+                className="w-full h-full border-0"
+                title="Simulation Plot 3"
+              ></iframe>
+            </>
+          )}
+          {activeTab === "plot4" && (
+            <>
+              <h2 className="text-center text-xl mb-4">
+                With center of gravity at 2.00, with dampening
+              </h2>
+              <iframe
+                src="/2_CENTER_GRAVITY_YES_DAMPENING.html"
                 className="w-full h-full border-0"
                 title="Simulation Plot 3"
               ></iframe>
